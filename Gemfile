@@ -37,3 +37,5 @@ source 'https://rubygems.org'
  gem 'listen'
 
  gem 'bootstrap-sass'
+
+ gem 'devise'
