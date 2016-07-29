@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   root 'users#show'
 
-  get 'users/show'
 
   resources :users do
     resources :items, only: [:create]
