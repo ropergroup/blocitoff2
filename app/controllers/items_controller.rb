@@ -1,7 +1,23 @@
 class ItemsController < ApplicationController
 
   def create
-      @item = Item.new
-      @item.name = params[:item][:name]
+    @user = User.find(params[:user_id])
+   item = @user.items.new(item_params)
+   item.user = current_user
+
+   if item.save
+     flash[:notice] = "Item saved successfully."
+
+    redirect_to [@user]
+   else
+     flash[:alert] = "Item failed to save."
+
+     redirect_to [@user]
    end
-end
+ end
+
+private
+   def item_params
+     params.require(:item).permit(:name)
+   end
+ end

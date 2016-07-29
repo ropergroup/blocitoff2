@@ -9,4 +9,10 @@
    </div>
 
    <div class="col-md-8">
-     <%= render partial: 'form' locals: { user: @item.user, item: @item } %>
+     <%= render @items %>
+  </div>
+  <% if current_user %>
+
+       <%= render 'items/form', item: Item.new, user: @user %>
+     <% end %>
+  </div>
