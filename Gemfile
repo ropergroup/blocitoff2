@@ -16,7 +16,7 @@ source 'https://rubygems.org'
  end
 
  group :test do
-    gem 'rspec-rails', '~> 3.5'
+    gem 'rspec-rails', '~> 3.0'
     gem 'shoulda'
     gem 'faker'
     gem 'factory_girl_rails'
