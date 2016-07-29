@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users
+
+  #controllers: { registrations: "registrations" }
+  get 'welcome/about'
+  get 'welcome/tasks'
   get 'welcome/index'
 
-  get 'welcome/about'
+  resources :users
 
-  get 'welcome/tasks'
-
-  root 'welcome#tasks'
+  root 'users#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
