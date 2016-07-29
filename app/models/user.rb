@@ -8,4 +8,5 @@ protected
   def confirmation_required?
     false
   end
+
 end
