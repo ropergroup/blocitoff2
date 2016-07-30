@@ -1,0 +1,11 @@
+<h4>Add a task</h4>
+
+<%= form_for [user, item] do |f| %>
+   <div class="form-group">
+     <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter Task" %>
+   </div>
+   <div class="form-group">
+     <%= f.submit "Save", class: 'btn btn-success' %>
+   </div>
+ <% end %>
