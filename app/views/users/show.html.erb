@@ -1,18 +1,9 @@
 <h1>Tasks</h1>
 
- <div class="row">
+<p>Mind dump to get all tasks written down</p>
 
-   <div class="col-md-4">
+<h3><%= render @items %></h3>
 
-     <p>Mind dump to get all tasks writen down</p>
-
-   </div>
-
-   <div class="col-md-8">
-     <%= render @items %>
-  </div>
-  <% if current_user %>
-
-       <%= render 'items/form', item: Item.new, user: @user %>
-     <% end %>
-  </div>
+<% if current_user %>
+<%= render 'items/form', item: Item.new, user: @user %>
+<% end %>

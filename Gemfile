@@ -20,7 +20,6 @@ source 'https://rubygems.org'
     gem 'shoulda'
     gem 'faker'
     gem 'factory_girl_rails'
-    gem 'simplecov'
      end
 
  # Use SCSS for stylesheets
@@ -41,3 +40,5 @@ source 'https://rubygems.org'
  gem 'devise'
 
  gem 'figaro', '1.0'
+
+ gem 'simplecov'
