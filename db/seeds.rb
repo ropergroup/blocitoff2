@@ -1,21 +1,21 @@
-require 'rubygems'
 require 'faker'
-#require 'activerecord'
 
 
 # Create Users
-#10.times do
-
-   #User.create!(
-     #email: Faker::Internet.email,
-     #password: Faker::Internet.password)
- #end
- #current_users = User.all
+rand(4..10).times do
+  password = Faker::Lorem.characters(10)
+  u = User.new(
+    email: Faker::Internet.email,
+    password: password,
+    password_confirmation: password)
+  u.skip_confirmation!
+  u.save
+end
 
  # Create Items
  50.times do
 
-   Item.create!(
+   Item.new(
      name: Faker::Commerce.product_name
    )
  end
