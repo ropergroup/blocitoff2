@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :item do
-    name RandomData.random_name
+    name Faker::Hipster.word
+    user
   end
 end
