@@ -20,8 +20,6 @@ class ItemsController < ApplicationController
     @user = current_user
     @item = @user.items.find(params[:id])
 
-
-
   if @item.destroy
       flash[:notice] = "Item has been completed!"
   else
