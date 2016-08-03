@@ -2,24 +2,24 @@ require 'faker'
 
 
 # Create Users
-rand(4..10).times do
-  password = Faker::Lorem.characters(10)
-  u = User.new(
-    email: Faker::Internet.email,
-    password: password,
-    password_confirmation: password)
-  u.skip_confirmation!
-  u.save
-end
+10.times do
 
- # Create Items
- 50.times do
+  User.create!(
+  email: Faker::Internet.email,
+  password: Faker::Internet.password
+  )
+  end
+  users = User.all
 
-   Item.new(
-     name: Faker::Commerce.product_name
-   )
- end
- items = Item.all
+# Create Items
+50.times do
+
+  Item.create!(
+  user: users.sample,
+  name: Faker::Commerce.product_name
+  )
+  end
+  items = Item.all
 
 
  puts "Seed finished"
