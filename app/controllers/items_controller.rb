@@ -20,11 +20,13 @@ class ItemsController < ApplicationController
     @user = current_user
     @item = @user.items.find(params[:id])
 
-    if @item.destroy
+
+
+  if @item.destroy
       flash[:notice] = "Item has been completed!"
-    else
+  else
       flash[:alert] = "There was an error completing the item. Try again."
-    end
+  end
 
     respond_to do |format|
       format.html
