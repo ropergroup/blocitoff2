@@ -10,7 +10,6 @@ source 'https://rubygems.org'
 
  group :development do
    gem 'sqlite3'
-   gem 'pry-rails'
    gem 'better_errors'
    gem 'binding_of_caller'
  end
@@ -20,7 +19,11 @@ source 'https://rubygems.org'
     gem 'shoulda'
     gem 'faker'
     gem 'factory_girl_rails'
-     end
+ end
+
+ group :test, :development do
+   gem 'pry-rails'
+ end
 
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'

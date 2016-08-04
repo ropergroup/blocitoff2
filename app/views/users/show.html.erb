@@ -1,10 +1,15 @@
 <h1>Tasks</h1>
 
-    <p>Mind dump to get all tasks written down</p>
+<p>Mind dump to get all tasks written down</p>
 
-        <div class='js-items'>
-            <h3><%= render @user.items, remote: true %></h3>
-        </div>
-    <% if current_user %>
-    <%= render 'items/form', item: Item.new, user: @user %>
-    <% end %>
+<table class="table table-hover">
+  <tbody>
+    <tr class='js-items'>
+      <%= render @user.items %>
+    </tr>
+  </tbody>
+</table>
+
+<% if current_user %>
+  <%= render 'items/form', item: Item.new, user: @user %>
+<% end %>
