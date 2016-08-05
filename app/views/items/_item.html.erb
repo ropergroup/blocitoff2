@@ -1,4 +1,4 @@
 <%= content_tag :tr, class: "info", id: "item-#{item.id}" do %>
-  <td><%= item.name %> --created <%= time_ago_in_words(item.created_at) %> ago</td>
+  <td><%= item.name %> --item expires in: <%= item.expired_at %></td>
   <td><%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %></td>
 <% end %>
