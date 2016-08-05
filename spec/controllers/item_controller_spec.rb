@@ -1,9 +1,23 @@
 require 'rails_helper'
 
+RSpec.describe ItemsController, type: :controller do
+  include Devise::Test::ControllerHelpers
 
-describe "new" do
-  it "creates item" do
-    item_params = (TEST1234)
-    expect { post :create, :item => item_params }.to change(Item, :count).by(1)
+  before (:each) do
+    @user = FactoryGirl.create(:user)
+    sign_in @user
+  end
+
+  describe "create" do
+    it "creates item" do
+      expect { post :create, :item => {name: "get food"}, user_id: @user.id }.to change(Item, :count).by(1)
+    end
+  end
+
+  describe "destroy" do
+    it "creates item" do
+      item = FactoryGirl.create(:item, user_id: @user.id)
+      expect { delete :destroy, user_id: @user.id, id: item.id, format: :js}.to change(Item, :count).by(-1)
+    end
   end
 end
