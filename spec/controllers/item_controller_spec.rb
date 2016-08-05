@@ -14,7 +14,7 @@ RSpec.describe ItemsController, type: :controller do
     end
   end
 
-  describe "new" do
+  describe "destroy" do
     it "creates item" do
       item = FactoryGirl.create(:item, user_id: @user.id)
       expect { delete :destroy, user_id: @user.id, id: item.id, format: :js}.to change(Item, :count).by(-1)
