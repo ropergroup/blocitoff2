@@ -19,5 +19,6 @@ RSpec.describe ItemsController, type: :controller do
         item = FactoryGirl.create(:item, user_id: @user.id)
       expect { delete :destroy, user_id: @user.id }.to change(Item, :count).by(-1)
     end
+     it { is_expected.to redirect_to :action => :show }
   end
 end
