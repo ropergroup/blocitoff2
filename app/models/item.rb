@@ -4,6 +4,6 @@ class Item < ApplicationRecord
 
 
   def expired_at
-    self.expire_at-(DateTime.now.to_date - created_at.to_date).to_i
+    expire_at - (DateTime.current.to_date - created_at.to_date).to_i
   end
 end
