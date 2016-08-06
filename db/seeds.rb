@@ -16,7 +16,8 @@ require 'faker'
 
   Item.create!(
   user: users.sample,
-  name: Faker::Commerce.product_name
+  name: Faker::Commerce.product_name,
+  exp: 7
   )
   end
   items = Item.all
