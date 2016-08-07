@@ -22,6 +22,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'pry-rails'
+
 end
 
 # Use SCSS for stylesheets
@@ -46,3 +47,5 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 
 gem 'figaro', '1.0'
+
+gem 'listen'
