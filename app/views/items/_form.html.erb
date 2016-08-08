@@ -1,12 +1,12 @@
 <h4>Add a task</h4>
 
-<%= form_for [user, item] do |f| %>
-   <div class="form-group">
-     <%= f.label :name %>
-      <h5> Enter Task: <%= f.text_field :name, class: 'form-control', placeholder: "Enter Task" %></h5>
-      <h5>Enter # of days until item expires: <%= f.number_field :exp, class: 'form-control', placeholder: "7", value: nil, required: true %></h5>
-   </div>
-   <div class="form-group">
-     <%= f.submit "Save", class: 'btn btn-success' %>
-   </div>
- <% end %>
+   <%= form_for [user, item] do |f| %>
+      <div class="form-group">
+         <%= f.label :name %>
+         <%= f.text_field :name, class: 'form-control', placeholder: "Enter Task" %>
+         <%= f.number_field :exp, class: 'form-control', placeholder: "Enter # of days until item expires", value: nil, required: true %>
+      </div>
+      <div class="form-group">
+         <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+   <% end %>

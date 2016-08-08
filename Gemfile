@@ -20,7 +20,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'faker'
   gem 'factory_girl_rails'
-  gem 'simplecov'
+  gem 'simplecov', '0.11.2'
   gem 'pry-rails'
 
 end
